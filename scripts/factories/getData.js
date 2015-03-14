@@ -12,13 +12,14 @@ kontApp.factory('getData', ['$http', function($http){
 
   return {
     aid: function() {
-      var data = fetch('foraldrapenning').then(function(resp) {
+      var promise = fetch('foraldrapenning').then(function(resp) {
         console.log(resp);
         return resp;
       });
 
-      return data;
+      return promise;
     },
+
     work: function() {
       var data = fetch('medelarbetstid').then(function(resp) {
         var males = _.filter(resp.data, function(entry) {
@@ -26,6 +27,9 @@ kontApp.factory('getData', ['$http', function($http){
         });
         var females = _.filter(resp.data, function(entry) {
           return entry.key[1] === '2';
+        });
+        var total = _.filter(resp.data, function(entry) {
+          return entry.key[1] === '1+2';
         });
 
         males = _.map(males, function(entry) {
@@ -40,13 +44,21 @@ kontApp.factory('getData', ['$http', function($http){
             value: parseFloat(entry.values[0])
           };
         });
+        total = _.map(total, function(entry) {
+          return {
+            year: parseInt(entry.key[2]),
+            value: parseFloat(entry.values[0])
+          };
+        });
 
         males = _.object(_.pluck(males, 'year'), _.pluck(males, 'value'));
         females = _.object(_.pluck(females, 'year'), _.pluck(females, 'value'));
+        total = _.object(_.pluck(total, 'year'), _.pluck(total, 'value'));
 
         return {
           males: males,
-          females: females
+          females: females,
+          total: total
         };
       });
 
