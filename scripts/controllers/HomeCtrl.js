@@ -3,7 +3,7 @@ kontApp.controller('HomeCtrl', ['$scope', '$http', 'getData', function($scope, $
   // $scope.jsonData = getData.fetch(datas);
   $scope.message = 'hejsan';
 
-  $scope.foraldrapenning = getData.aid();
+  $scope.work = getData.work();
 
   $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
   $scope.series = ['Series A', 'Series B'];
