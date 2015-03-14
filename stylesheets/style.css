@@ -64,3 +64,8 @@ button {
  red: #EB584E
  blue: #26B7BC
  */
+
+.chart-container {
+  max-width: 300px;
+  max-height: 300px;
+}
