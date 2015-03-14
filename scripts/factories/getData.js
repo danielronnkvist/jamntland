@@ -51,10 +51,6 @@ kontApp.factory('getData', ['$http', function($http){
           };
         });
 
-        males = _.object(_.pluck(males, 'year'), _.pluck(males, 'value'));
-        females = _.object(_.pluck(females, 'year'), _.pluck(females, 'value'));
-        total = _.object(_.pluck(total, 'year'), _.pluck(total, 'value'));
-
         return {
           males: males,
           females: females,
