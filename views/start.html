@@ -1,13 +1,13 @@
-<section>
-  <h1>Welcome to jämtland</h1>
-  <form>
-    <input type="number" ng-model="age">
-    <button type="submit" ng-click="changeView()">Go!</button>
+<section class="c-startmodal">
+  <h1>Jäm<span>n</span>tland</h1>
+  <p class="text-italic">
+    För att veta hurvida samhället och sin generation utvecklas ur ett jämställt perspektiv kan man stirra sig blind på både data och olika uttalanden. Att veta hur framtiden för ett jämställt samhälle är en svår fråga att svara på med dagens medel.
+  </p>
+  <form ng-submit="changeView()">
+    <p>
+      Jag är
+      <input type="number" ng-model="age" min="0" max="120" placeholder="...">
+      år gammal. När blir min generation jämställd?
+    </p>
   </form>
-  <p ng-if="error">
-    nädu!
-  </p>
-  <p ng-if="ageInfo">
-    Åldern måste vara vettig duuu
-  </p>
 </section>
