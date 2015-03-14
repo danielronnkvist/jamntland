@@ -16,6 +16,17 @@ kontApp.controller('HomeCtrl', ['$scope', '$location', '$http', 'getData', funct
     ];
   });
 
+  getData.aid().then(function(data) {
+    console.log(data);
+    $scope.aid = data;
+
+    $scope.labels = _.pluck(data.males, 'year');
+    $scope.data = [
+      _.pluck(data.males, 'value'),
+      _.pluck(data.females, 'value')
+    ];
+  })
+
   $scope.series = ['Males', 'Females'];
 
   $scope.onClick = function (points, evt) {
