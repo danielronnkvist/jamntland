@@ -1,7 +1,4 @@
-// global!
-kontApp = angular.module('kontApp', ['ngRoute']);
-
-kontApp.directive('dummychart', function($parse) {
+kontApp.directive('barsChart', function($parse) {
   var directiveDefinitionObject = {
     //We restrict its use to an element
     //as usually  <bars-chart> is semantically
@@ -11,9 +8,10 @@ kontApp.directive('dummychart', function($parse) {
     //we don't want to overwrite our directive declaration
     //in the HTML mark-up
     replace: false,
+    //our data source would be an array
+    //passed thru chart-data attribute
+    scope: {data: '=chartData'},
     link: function (scope, element, attrs) {
-      //converting all data passed thru into an array
-      var data = attrs.chartData.split(',');
       //in D3, any selection[0] contains the group
       //selection[0][0] is the DOM node
       //but we won't need that this time
@@ -23,14 +21,14 @@ kontApp.directive('dummychart', function($parse) {
       //data entry to the chart
       chart.append("div").attr("class", "chart")
         .selectAll('div')
-        .data(data).enter().append("div")
+        .data(scope.data).enter().append("div")
         .transition().ease("elastic")
         .style("width", function(d) { return d + "%"; })
         .text(function(d) { return d + "%"; });
       //a little of magic: setting it's width based
       //on the data value (d)
       //and text all with a smooth transition
-     }
+    }
   };
   return directiveDefinitionObject;
 });
