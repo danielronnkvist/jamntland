@@ -1,6 +1,10 @@
-kontApp.controller('HomeCtrl', ['$scope', '$http', 'getData', function($scope, $http, getData){
+kontApp.controller('HomeCtrl', ['$scope', '$location', '$http', 'getData', function($scope, $location, $http, getData){
+  if($location.search().age < 1)
+    $location.path('/').search({age: $location.search().age}); // Redirect to start page
+
+  $scope.age = $location.search().age;
   var datas = ['medelinkomst','barn_fritid_kultur','utbildning','foraldrapenning','BistandMottagSoS','personer_inkomstintervall'];
-  $scope.jsonData = getData.fetch(datas);
+  // $scope.jsonData = getData.fetch(datas);
   $scope.message = 'hejsan';
 
   $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
