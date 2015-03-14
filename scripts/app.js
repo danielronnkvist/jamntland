@@ -13,4 +13,4 @@ kontApp.config(['$routeProvider',
         redirectTo: '/home'
       });
   }
-])
+]);
