@@ -9,12 +9,18 @@ kontApp.controller('HomeCtrl', ['$scope', '$location', '$http', 'getData', funct
 
   $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
   $scope.series = ['Series A', 'Series B'];
-  $scope.data = [
+  $scope.data = $scope.radarData = [
     [65, 59, 80, 81, 56, 55, 40],
     [28, 48, 40, 19, 86, 27, 90]
   ];
 
+
   $scope.onClick = function (points, evt) {
+    $scope.time = $scope.labels.indexOf(points[0].label);
     console.log(points, evt);
+    $scope.radarData = [
+      [25, 39, 10, 81, 16, 35, 80],
+      [55, 33, 49, 35, 70, 43, 61]
+    ];
   };
 }]);
