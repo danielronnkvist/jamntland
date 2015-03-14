@@ -1,5 +1,5 @@
 // global!
-kontApp = angular.module('kontApp', ['ngRoute']);
+kontApp = angular.module('kontApp', ['ngRoute', 'chart.js']);
 
 // routes
 kontApp.config(['$routeProvider',

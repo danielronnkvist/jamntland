@@ -8,19 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="stylesheets/chart.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/vendor/angular-chart.css">
   </head>
   <body ng-app="kontApp">
 
     <div id="yield" ng-view></div>
 
     <!-- vendor stuff -->
+    <script src="scripts/vendor/chart.min.js"></script>
     <script src="scripts/vendor/angular.min.js"></script>
     <script src="scripts/vendor/angular-route.min.js"></script>
-    <script src="scripts/vendor/d3.min.js"></script>
+    <script src="scripts/vendor/angular-chart.min.js"></script>
 
     <!-- our scripts -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/directives/barsChart.js"></script>
     <script src="scripts/controllers/HomeCtrl.js"></script>
   </body>
 </html>
