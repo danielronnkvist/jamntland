@@ -1,6 +1,7 @@
-kontApp.controller('HomeCtrl', ['$scope', '$http', 'getData', function($scope, $http, getData){
+kontApp.controller('HomeCtrl', ['$scope', '$rootScope', '$http', 'getData', function($scope, $rootScope, $http, getData){
+  $scope.age = $rootScope.age;
   var datas = ['medelinkomst','barn_fritid_kultur','utbildning','foraldrapenning','BistandMottagSoS','personer_inkomstintervall'];
-  $scope.jsonData = getData.fetch(datas);
+  // $scope.jsonData = getData.fetch(datas);
   $scope.message = 'hejsan';
 
   $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
