@@ -8,8 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
   </head>
-  <body>
+  <body ng-app="kontApp">
 
-    <script src="scripts/angular.min.js"></script>
+    <div id="yield" ng-view></div>
+
+    <script src="scripts/vendor/angular.min.js"></script>
+    <script src="scripts/vendor/angular-route.min.js"></script>
+    <script src="scripts/app.js"></script>
   </body>
 </html>
