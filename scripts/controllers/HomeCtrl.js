@@ -1,5 +1,5 @@
-kontApp.controller('HomeCtrl', ['$scope', '$rootScope', '$http', 'getData', function($scope, $rootScope, $http, getData){
-  $scope.age = $rootScope.age;
+kontApp.controller('HomeCtrl', ['$scope', '$location', '$http', 'getData', function($scope, $location, $http, getData){
+  $scope.age = $location.search().age;
   var datas = ['medelinkomst','barn_fritid_kultur','utbildning','foraldrapenning','BistandMottagSoS','personer_inkomstintervall'];
   // $scope.jsonData = getData.fetch(datas);
   $scope.message = 'hejsan';

@@ -2,7 +2,7 @@
 kontApp = angular.module('kontApp', ['ngRoute', 'chart.js']);
 
 // routes
-kontApp.config(['$routeProvider', '$locationProvider',
+kontApp.config(['$routeProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/home', {
@@ -18,9 +18,5 @@ kontApp.config(['$routeProvider', '$locationProvider',
       otherwise({
         redirectTo: '/'
       });
-    $locationProvider.html5Mode({
-      enabled: true,
-      requireBase: false
-    }).hashPrefix('#');
   }
 ]);

@@ -1,9 +1,7 @@
 kontApp.controller('StartCtrl', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location){
-  $scope.changeView = function(view){
-    console.log(typeof $scope.age)
+  $scope.changeView = function(){
     if(typeof $scope.age === "number"){
-      $rootScope.age = $scope.age;
-      $location.path(view);
+      $location.path('/home').search({age: $scope.age});
     }else{
       $scope.error = true;
     }
