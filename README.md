@@ -1,7 +1,7 @@
-Kontorsknegarna
-====
+# Jäm*n*tland
 
-Awesome repo for the hackaton Hack for Sweden, 14-15 march 2015.
+What is the state of gender equality in Sweden? And what will it be in 5, 10 or
+20 years from now? Jäm*n*tland is a service that tries to answer that question.
 
 ## Team
 
