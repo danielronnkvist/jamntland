@@ -1,6 +1,6 @@
 <section class="c-container">
   <p>
-    Jag är {{age}} år gammal. Visa mig data från
+    Jag är {{age}} år gammal. Visa mig {{year > 2013 ? 'hur datan lär se ut' : 'data från'}}
     <input type="number" ng-model="year" min="2005" max="2035">.
   </p>
 
