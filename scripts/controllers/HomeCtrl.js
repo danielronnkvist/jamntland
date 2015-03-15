@@ -40,6 +40,6 @@ kontApp.controller('HomeCtrl', ['$scope', '$location', '$http', 'getData', funct
     2013: [12741697, 38706268]
   };
 
-  // $scope.labels = ["", "Arbetstimmar", "Utdelat bistånd", "Föräldraledighet", "May", "June", "July"];
+  Chart.defaults.global.colours = ["#ED931C", "#22B38A", "#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"];
   $scope.labels = ['Män', 'Kvinnor'];
 }]);
