@@ -6,9 +6,6 @@ kontApp.controller('HomeCtrl', ['$scope', '$location', '$http', 'getData', funct
   var datas = ['medelinkomst','barn_fritid_kultur','utbildning','foraldrapenning','BistandMottagSoS','personer_inkomstintervall'];
 
   $scope.year = 2005;
-
-  $scope.data = {};
-
   $scope.salary = {
     2005: [115.1, 89.5],
     2006: [122.2, 94.8],
