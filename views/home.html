@@ -1,9 +1,42 @@
-<section>
-  <h1>{{age}}</h1>
+<section class="c-container">
+  <p>
+    Jag är {{age}} år gammal. Visa mig {{year > 2013 ? 'hur datan lär se ut' : 'data från'}}
+    <input type="number" ng-model="year" min="2005" max="2035">.
+  </p>
 
-  <canvas id="line" class="chart chart-line" data="data" labels="labels"
-    legend="true" series="series" click="onClick">
-  </canvas>
-  <canvas id="radar" class="chart chart-radar" data="data" labels="labels">
-  </canvas>
+  <div class="charts">
+    <div class="chart__item">
+      <canvas id="pie" class="chart chart-pie" data="salary[year]"
+        labels="labels"></canvas>
+      <h3>
+        Förvärvsinkomst
+      </h3>
+      <p>
+        För boende i sverige, sammaräknat från de sammanlagda löpande skattepliktiga inkomsterna. De avser inkomster från anställning, företagande, pension, sjukpenning och andra skattepliktiga transfereringar. Datan kommer från Statistiska centralbyrån.
+        Senast uppdaterad: 2015-02-13
+      </p>
+    </div>
+    <div class="chart__item">
+      <canvas id="pie" class="chart chart-pie" data="work[year]"
+        labels="labels"></canvas>
+      <h3>
+        Medelarbetstid
+      </h3>
+      <p>
+        Överenskommen per vecka för sysselsatta. Baserat på en urvalsundersökning på ett rikstäckande slumpmässigt urval. Datan kommer från Statistiska centralbyrån. <br>
+        Senast uppdaterad: 2015-01-21
+      </p>
+    </div>
+    <div class="chart__item">
+      <canvas id="pie" class="chart chart-pie" data="parenting[year]"
+        labels="labels"></canvas>
+      <h3>
+        Föräldrapenning
+      </h3>
+      <p>
+        Antalet dagar uttagna. Ej ekonomisk summa utdelad. Datan kommer från Försäkringskassan.
+        Senast uppdaterad: 2015-01-20
+      </p>
+    </div>
+  </div>
 </section>
